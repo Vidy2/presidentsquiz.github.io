@@ -49,12 +49,10 @@
         </ul>
     </section>
 
-    <script>
-      (async function () {
-        await cheerpjInit();
-        cheerpjCreateDisplay(800, 600);
-        await cheerpjRunJar("/app/Presidents.jar");
-      })();
+    <script type="module">
+    await cheerpjInit();
+    cheerpjCreateDisplay(800, 600);
+    await cheerpjRunJar("/app/Presidents.jar");
     </script>
 </body>
 
