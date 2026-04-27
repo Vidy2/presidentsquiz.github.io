@@ -70,7 +70,13 @@
         </div>
     </section>
 
-    <script src="presidents.js"></script>
+    <script>
+      (async function () {
+        await cheerpjInit();
+        cheerpjCreateDisplay(800, 600);
+        await cheerpjRunJar("Presidents.jar");
+      })();
+    </script>
 </body>
 
 </html>
