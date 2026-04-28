@@ -38,7 +38,6 @@
             color: #fff;
         }
     </style>
-    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
 </head>
 <body>
 
@@ -48,24 +47,6 @@
             <li>Presidents Quiz: <a href="https://codehs.com/sandbox/id/presidents-quiz-F7qDEw/run" target="_blank">Presidents Quiz</a></li>
         </ul>
     </section>
-
-    <script>
-(async function () {
-  console.log("Starting CheerpJ...");
-  await cheerpjInit();
-  console.log("Initialized");
-
-  cheerpjCreateDisplay(800, 600);
-  console.log("Display created");
-
-  await cheerpjRunJar("Presidents.jar", {
-    stdout: console.log,
-    stderr: console.error
-  });
-
-  console.log("Jar execution finished");
-})();
-</script>
 </body>
 
 </html>
