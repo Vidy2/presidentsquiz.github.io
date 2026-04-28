@@ -50,12 +50,22 @@
     </section>
 
     <script>
-      (async function () {
-        await cheerpjInit();
-        cheerpjCreateDisplay(800, 600);
-        await cheerpjRunJar("Presidents.jar");
-      })();
-    </script>
+(async function () {
+  console.log("Starting CheerpJ...");
+  await cheerpjInit();
+  console.log("Initialized");
+
+  cheerpjCreateDisplay(800, 600);
+  console.log("Display created");
+
+  await cheerpjRunJar("Presidents.jar", {
+    stdout: console.log,
+    stderr: console.error
+  });
+
+  console.log("Jar execution finished");
+})();
+</script>
 </body>
 
 </html>
