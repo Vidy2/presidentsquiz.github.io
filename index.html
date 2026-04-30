@@ -51,17 +51,17 @@
             top: 50%;
             left: 50%;
             width: 50px;
-            animation: orbit-square 20s linear infinite;
-            animation-delay: calc(var(--i) * -20s / 44);
+            animation: orbit-square 23s linear infinite;
+            animation-delay: calc(var(--i) * -23s / 44);
             pointer-events: auto;
             }
 
             @keyframes orbit-square {
-                0%   { transform: translate(-50%, -50%) translateX(0) translateY(calc(-1 * (min(50vw, 50vh) - 50px))); }
-                25%  { transform: translate(-50%, -50%) translateX(calc(min(50vw, 50vh) - 50px)) translateY(calc(-1 * (min(50vw, 50vh) - 50px))); }
-                50%  { transform: translate(-50%, -50%) translateX(calc(min(50vw, 50vh) - 50px)) translateY(calc(min(50vw, 50vh) - 50px)); }
-                75%  { transform: translate(-50%, -50%) translateX(calc(-1 * (min(50vw, 50vh) - 50px))) translateY(calc(min(50vw, 50vh) - 50px)); }
-                100% { transform: translate(-50%, -50%) translateX(calc(-1 * (min(50vw, 50vh) - 50px))) translateY(calc(-1 * (min(50vw, 50vh) - 50px))); }
+                0%   { transform: translate(-50%, -50%) translateX(0) translateY(calc(-1 * (50vh - 25px))); }
+                25%  { transform: translate(-50%, -50%) translateX(calc(50vw - 25px)) translateY(calc(-1 * (50vh - 25px))); }
+                50%  { transform: translate(-50%, -50%) translateX(calc(50vw - 25px)) translateY(calc(50vh - 25px)); }
+                75%  { transform: translate(-50%, -50%) translateX(calc(-1 * (50vw - 25px))) translateY(calc(50vh - 25px)); }
+                100% { transform: translate(-50%, -50%) translateX(calc(-1 * (50vw - 25px))) translateY(calc(-1 * (50vh - 25px))); }
             }
     </style>
 </head>
