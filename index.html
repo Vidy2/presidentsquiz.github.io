@@ -50,18 +50,18 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 50px;
+            width: 70px;
             animation: orbit-square 25s linear infinite;
             animation-delay: calc(var(--i) * -35s / 44);
             pointer-events: auto;
             }
 
             @keyframes orbit-square {
-                0%   { transform: translate(-50%, -50%) translateX(calc(48vw - 25px)) translateY(calc(-1 * (45vh - 25px))); }
-                25%  { transform: translate(-50%, -50%) translateX(calc(48vw - 25px)) translateY(calc(45vh - 25px)); }
-                50%  { transform: translate(-50%, -50%) translateX(calc(-1 * (48vw - 25px))) translateY(calc(45vh - 25px)); }
-                75%  { transform: translate(-50%, -50%) translateX(calc(-1 * (48vw - 25px))) translateY(calc(-1 * (45vh - 25px))); }
-                100% { transform: translate(-50%, -50%) translateX(calc(48vw - 25px)) translateY(calc(-1 * (45vh - 25px))); }
+                0%   { transform: translate(-50%, -50%) translateX(calc(50vw - 40px)) translateY(calc(-1 * (50vh - 40px))); }
+                25%  { transform: translate(-50%, -50%) translateX(calc(50vw - 40px)) translateY(calc(50vh - 40px)); }
+                50%  { transform: translate(-50%, -50%) translateX(calc(-1 * (50vw - 40px))) translateY(calc(50vh - 40px)); }
+                75%  { transform: translate(-50%, -50%) translateX(calc(-1 * (50vw - 40px))) translateY(calc(-1 * (50vh - 40px))); }
+                100% { transform: translate(-50%, -50%) translateX(calc(50vw - 40px)) translateY(calc(-1 * (50vh - 40px))); }
             }
     </style>
 </head>
