@@ -39,21 +39,21 @@
         .corner-link {
             position: fixed;
             bottom: 10rem;
-            right: 10rem;
+            right: 5rem;
             background: #fff;
-            padding: 3rem 6rem;
-            border-radius: 15px;
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 10px;
         }
     </style>
 </head>
-<body>
+<body style ="background-image:url('https://t4.ftcdn.net/jpg/00/92/47/85/360_F_92478590_BbuqPZQDFPOOjIbhQajB3oq2z5cfsVZt.jpg');background-size:cover;background-repeat:no-repeat;display:flow-root;text-decoration:none;">
 
     <section id="about">
         <h2>Review</h2>
-            <input id ="message" type ="text" placeholder = "Feedback here">
-            <button id = "submit" style="padding: 10rem;">Submit</button>
+            <input style="padding: 1.5rem; border-radius: 25px; border: 5px solid #ccc;" id ="message" type ="text" placeholder = "Feedback here">
+            <button id = "submit">Submit</button>
         <p id = "status"></p>
     </section>
 <script>
@@ -64,33 +64,25 @@ document.getElementById("submit").addEventListener("click", async () => {
     const status = document.getElementById("status");
 
     const message = messageInput.value;
-    console.log("Button clicked");
-    console.log(message);
 
-    if (!message) {
-        return;
-    }
-
+    if (!message) return;
 
     try {
-        fetch(scriptURL, {
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify({ message }),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    });
-        const result = await response.json();
+        await fetch(scriptURL, {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify({ message }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
 
-        if (result.status === "success") {
-            message = "";
-            messageInput.value = "";
-            status.textContent = "Submitted";
-        }
+        messageInput.value = "";
+        status.textContent = "Submitted";
 
     } catch (error) {
         console.error(error);
+        status.textContent = "Error submitting";
     }
 });
 </script>
