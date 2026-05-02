@@ -73,7 +73,7 @@
         }
         #status {
             font-size:30px;
-            color: lightgreen;
+            color: darkgreen;
         }
     </style>
 </head>
@@ -100,8 +100,8 @@ document.getElementById("submit").addEventListener("click", async () => {
     btn.classList.add("pulse");
 
     setTimeout(() => {
-        btn.classList.remove("flash");
-    }, 300);
+        btn.classList.remove("pulse");
+    }, 200);
 
     try {
         fetch(scriptURL, {
