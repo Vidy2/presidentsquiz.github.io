@@ -5,78 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presidents Quiz Cool</title>
-    <link rel="shortcut icon" type="image/jpg" href="https://upload.wikimedia.org/wikipedia/commons/2/2c/William_Henry_Harrison_crop.jpg">
+
     <style>
         body {
             font-family: Victorian, serif;
             margin: 0;
             padding: 0;
-            line-height: 2.5;
+            line-height: 1.5;
+            overflow-x: hidden;
+            background-image:url('https://t4.ftcdn.net/jpg/00/92/47/85/360_F_92478590_BbuqPZQDFPOOjIbhQajB3oq2z5cfsVZt.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
+
+        section {
+            padding: clamp(1rem, 4vw, 2rem);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
             text-align: center;
         }
-        nav {
+
+        .quiz-item {
+            font-size: clamp(1rem, 4vw, 1.8rem);
+            text-align: center;
             margin: 1rem 0;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        section {
-            padding: 2rem;
-            border-bottom: 0px solid #ddd;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #333;
-            color: #fff;
-        }
-        a, a:visited, a:hover, a:active {
+
+        a {
             color: #007BFF;
+            text-decoration: none;
         }
+
         .corner-link {
             position: fixed;
-            bottom: 5rem;
-            right: 5rem;
+            bottom: 1rem;
+            right: 1rem;
             background: #fff;
             padding: 0.3rem 0.6rem;
             border-radius: 5px;
-            text-decoration: none;
-            font-size: 10px;
+            font-size: 0.8rem;
         }
+
         .square-container {
-            position: absolute;
+            position: fixed;
             inset: 0;
             overflow: hidden;
             pointer-events: none;
-            }
+        }
 
-            .orbit {
+        .orbit {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 68px;
+            width: clamp(30px, 8vw, 68px);
             animation: orbit-square 23s linear infinite;
             animation-delay: calc(var(--i) * -23s / 44);
             pointer-events: auto;
+        }
+
+        @keyframes orbit-square {
+            0%   { transform: translate(-50%, -50%) translateX(calc(50vw - 35px)) translateY(calc(-1 * (50dvh - 35px))); }
+            25%  { transform: translate(-50%, -50%) translateX(calc(50vw - 35px)) translateY(calc(50dvh - 35px)); }
+            50%  { transform: translate(-50%, -50%) translateX(calc(-1 * (50vw - 35px))) translateY(calc(50dvh - 35px)); }
+            75%  { transform: translate(-50%, -50%) translateX(calc(-1 * (50vw - 35px))) translateY(calc(-1 * (50dvh - 35px))); }
+            100% { transform: translate(-50%, -50%) translateX(calc(50vw - 35px)) translateY(calc(-1 * (50dvh - 35px))); }
+        }
+
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 2rem;
             }
 
-            @keyframes orbit-square {
-                0%   { transform: translate(-50%, -50%) translateX(calc(50vw - 35px)) translateY(calc(-1 * (50vh - 35px))); }
-                25%  { transform: translate(-50%, -50%) translateX(calc(50vw - 35px)) translateY(calc(50vh - 35px)); }
-                50%  { transform: translate(-50%, -50%) translateX(calc(-1 * (50vw - 35px))) translateY(calc(50vh - 35px)); }
-                75%  { transform: translate(-50%, -50%) translateX(calc(-1 * (50vw - 35px))) translateY(calc(-1 * (50vh - 35px))); }
-                100% { transform: translate(-50%, -50%) translateX(calc(50vw - 35px)) translateY(calc(-1 * (50vh - 35px))); }
+            .quiz-item {
+                font-size: 1.2rem;
+                padding: 0 1rem;
             }
+        }
     </style>
 </head>
-<body style ="background-image:url('https://t4.ftcdn.net/jpg/00/92/47/85/360_F_92478590_BbuqPZQDFPOOjIbhQajB3oq2z5cfsVZt.jpg');background-size:cover;background-repeat:no-repeat;display:flow-root;text-decoration:none;">
+
+<body>
+
     <div class="square-container">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwsaZxuAgWICW7j4amn6I1UFIj0d8KKuxKtg&s" class="orbit" style="--i: 1">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiHjaSc8X7fBvmDYPpRxdCaMy4cXwQfJuJSg&s" class="orbit" style="--i: 2">
@@ -122,19 +133,42 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/President_Barack_Obama%2C_2012_portrait_crop.jpg/960px-President_Barack_Obama%2C_2012_portrait_crop.jpg" class="orbit" style="--i: 42">
         <img src="https://bookstore.gpo.gov/sites/default/files/styles/product_page_image/public/covers/potus2_0.jpg?itok=jEIslQZ1" class="orbit" style="--i: 43">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Joe_Biden_presidential_portrait.jpg" class="orbit" style="--i: 44">
-        
     </div>  
+
     <section id="project">
-        <h2 style="font-size: 50px; text-align: center;">Quizzes</h2>
+        <h2>Quizzes</h2>
         <ul style="list-style-type: none; padding: 0;">
-            <li style="font-size: 32px; text-align: center;">List all the presidents by last name: <a href="https://codehs.com/sandbox/id/presidents-quiz-F7qDEw/run" style="font-size: 32px; text-align: center;" target="_blank">Presidents Quiz by Last Name</a></li>
-            <li style="font-size: 32px; text-align: center;">List all the presidents by first name: <a href="https://codehs.com/sandbox/id/presidents-quiz-2-slQuY5/run" style="font-size: 32px; text-align: center;" target="_blank">Presidents Quiz by First Name</a></li>
-            <li style="font-size: 32px; text-align: center;">List all the presidents that have one by middle name: <a href="https://codehs.com/sandbox/id/presidents-quiz-3-K0AfLR/run" style="font-size: 32px; text-align: center;" target="_blank">Presidents Quiz by Middle Name </a></li>
-            <li style="font-size: 32px; text-align: center;">List all the presidents by last name in order: <a href="https://codehs.com/sandbox/id/presidents-quiz-4-f97V2I/run" style="font-size: 32px; text-align: center;" target="_blank">Presidents Quiz in Order</a></li>
-        </ul>
+            <li class="quiz-item">
+                List all the presidents by last name:
+                <a href="https://codehs.com/sandbox/id/presidents-quiz-F7qDEw/run" target="_blank">
+                    Presidents Quiz by Last Name
+                </a>
+            </li>
+
+            <li class="quiz-item">
+                List all the presidents by first name:
+                <a href="https://codehs.com/sandbox/id/presidents-quiz-2-slQuY5/run" target="_blank">
+                    Presidents Quiz by First Name
+                </a>
+            </li>
+
+            <li class="quiz-item">
+                List all the presidents that have one by middle name:
+                <a href="https://codehs.com/sandbox/id/presidents-quiz-3-K0AfLR/run" target="_blank">
+                    Presidents Quiz by Middle Name
+                </a>
+            </li>
+
+            <li class="quiz-item">
+                List all the presidents by last name in order:
+                <a href="https://codehs.com/sandbox/id/presidents-quiz-4-f97V2I/run" target="_blank">
+                    Presidents Quiz in Order
+                </a>
+            </li>
         </ul>
     </section>
-    <a href = "second-page.html" class = "corner-link" style="text-align: center;">Feedback Page</a>
-</body>
 
+    <a href="second-page.html" class="corner-link">Feedback Page</a>
+
+</body>
 </html>
